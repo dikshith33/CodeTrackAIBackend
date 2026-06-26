@@ -5,13 +5,14 @@ require("dotenv").config();
 const profileRoutes = require("./routes/profileRoutes");
 
 const app = express();
-
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://codetrack-ai.vercel.app"
-    ]
+      "https://code-track-ai-frontend.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
   })
 );
 app.use(express.json());
